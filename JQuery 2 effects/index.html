@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 4 Assignment1: JQuery - Getting Started</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header class="container">
+        <h1>Module 4 Assignment1: JQuery - Getting Started</h1>
+
+    </header>
+
+    <!-- &#x25B2 UP ARROW
+    &#x25BC DOWN ARROW -->
+    <main class="container">
+
+        <div class="paragraphs">
+            <div class="showHide">
+                <h2>Paragraph 1 SlideToggle<span class="arrow">&#x25B2</span></h2>
+
+                <p class="paragraphs">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit ad facilis,
+                    dolores
+                    eos vitae
+                    exercitationem
+                    laborum tempore delectus eum qui accusantium voluptatibus id, aspernatur atque molestiae, adipisci
+                    debitis
+                    consectetur sint?</p>
+            </div>
+
+            <div class="showHide2">
+                <h2>Paragraph 2 <span class="arrow">&#x25B2</span></h2>
+
+                <p class="paragraphs">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit, similique minima
+                    illum
+                    quod non facilis
+                    aliquid laborum tempore, vitae maxime quia aut maiores reiciendis minus repellendus enim ut adipisci
+                    exercitationem?</p>
+            </div>
+
+            <div class="showHide3">
+                <h2>Paragraph 3 <span class="arrow">&#x25B2</span></h2>
+
+                <p class="paragraphs">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores nam soluta
+                    quisquam eligendi tempore
+                    odit
+                    consequuntur ex, porro quo quibusdam saepe ut nihil aliquam voluptate, hic repellendus in impedit.
+                    Consectetur?</p>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="scripts/script.js"></script>
+
+    <style>
+        /* styles.css */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .arrow {
+            display: inline-block;
+            margin-left: 10px;
+            transition: transform 0.3s;
+        }
+
+        .arrow.rotated {
+            transform: rotate(180deg);
+        }
+
+        .arrow.rotatedHalf {
+            transform: rotate(90deg);
+        }
+
+        .showHide,
+        .showHide2,
+        .showHide3 h2:hover {
+            cursor: pointer;
+        }
+
+        header h1 {
+            font-size: 24px;
+            text-align: center;
+            color: #0073e6;
+            margin-bottom: 20px;
+        }
+
+        #headerTwos {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        #headerTwos h2 {
+            font-size: 20px;
+            color: #444;
+            cursor: pointer;
+            margin: 10px 0;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        #headerTwos h2:hover {
+            color: #0073e6;
+            transform: scale(1.1);
+        }
+
+        .paragraphs p {
+            line-height: 1.6;
+            margin: 15px 0;
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-left: 4px solid #0073e6;
+            border-radius: 5px;
+        }
+
+        button {
+            display: inline-block;
+            margin: 10px 5px;
+            padding: 10px 15px;
+            font-size: 16px;
+            color: #ffffff;
+            background-color: #0073e6;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        button:hover {
+            background-color: #005bb5;
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            background-color: #004494;
+        }
+
+        button:focus {
+            outline: none;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+
+    <script>$(document).ready(function () {
+
+            // slidetoggle
+            $(".showHide h2").click(function () {
+                $(this).next().slideToggle(500);
+                $(this).children("span").toggleClass("rotated");
+            })
+
+            // fade
+            $(".showHide2 h2").click(function () {
+                $(this).children("span").toggleClass("rotated");
+                if ($(this).children("span").hasClass("rotated")) {
+                    $(this).next().fadeOut(1000);
+                } else {
+                    $(this).next().fadeIn(1000);
+                }
+
+            })
+
+            // show/hide
+            $(".showHide3 h2").click(function () {
+                if ($(this).children("span").hasClass("rotatedHalf")) {
+                    $(this).next().show(500);
+                } else {
+                    $(this).next().hide(500);
+                }
+                $(this).children("span").toggleClass("rotatedHalf");
+
+            })
+
+
+        });</script>
+</body>
+
+</html>
