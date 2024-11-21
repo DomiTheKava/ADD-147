@@ -1,0 +1,81 @@
+/* styles.css */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9; /* Light background for contrast */
+  color: #333; /* General text color */
+}
+
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #ffffff; /* White background for focus */
+  border-radius: 10px; /* Rounded corners for smoother design */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+header h1 {
+  font-size: 24px;
+  text-align: center;
+  color: #0073e6; /* Highlight color for the header */
+  margin-bottom: 20px;
+}
+
+#headerTwos {
+  text-align: center;
+  margin: 20px 0;
+}
+
+#headerTwos h2 {
+  font-size: 20px;
+  color: #444; /* Neutral text color for subheaders */
+  cursor: pointer;
+  margin: 10px 0;
+  transition: color 0.3s, transform 0.3s;
+}
+
+#headerTwos h2:hover {
+  color: #0073e6; /* Change text color on hover */
+  transform: scale(1.1); /* Slight zoom effect */
+}
+
+.paragraphs p {
+  line-height: 1.6; /* Improve text readability */
+  margin: 15px 0; /* Add spacing between paragraphs */
+  background-color: #f4f4f4; /* Light gray background for paragraphs */
+  padding: 15px; /* Internal spacing */
+  border-left: 4px solid #0073e6; /* Stylish marker */
+  border-radius: 5px; /* Smooth edges */
+}
+
+button {
+  display: inline-block;
+  margin: 10px 5px; /* Space between buttons */
+  padding: 10px 15px; /* Button padding for comfort */
+  font-size: 16px; /* Readable text size */
+  color: #ffffff; /* White text color */
+  background-color: #0073e6; /* Blue background for emphasis */
+  border: none;
+  border-radius: 5px; /* Rounded buttons */
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background-color: #005bb5; /* Darker blue on hover */
+  transform: translateY(-2px); /* Lift effect */
+}
+
+button:active {
+  background-color: #004494; /* Even darker blue for click feedback */
+}
+
+button:focus {
+  outline: none; /* Remove focus outline */
+}
+
+.hidden {
+  display: none; /* Utility class for hiding elements */
+}
